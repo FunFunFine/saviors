@@ -26,7 +26,7 @@ namespace Drawing
         public Image GetBodyImage<T>(T body)
             where T : Body
         {
-            var type = typeof(T);
+            var type = body.GetType();
             return !bodies.ContainsKey(type) ? defaultImage : bodies[type];
         }
     }

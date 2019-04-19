@@ -1,6 +1,6 @@
 ﻿namespace PhysX
 {
-    class GameMap : IGameMap
+    public class GameMap : IGameMap
     {
 
         /// <inheritdoc />

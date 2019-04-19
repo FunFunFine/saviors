@@ -22,19 +22,24 @@ namespace WindowsFormsApp1
 
             var tiles = new Dictionary<Tile, Image>
             {
-                [Tile.Ground] = Image.FromFile(""),
-                [Tile.Wall] = Image.FromFile("")
+                [Tile.Ground] = Properties.Resources.floor,
+                [Tile.Wall] = Properties.Resources.brick,
+                [Tile.Pavement] = Properties.Resources.trotuar,
+                [Tile.Road] = Properties.Resources.road,
+                [Tile.Grass] = Properties.Resources.grass
             };
 
             var bodies = new Dictionary<Type, Image>
             {
-
+                [typeof(Player)] = Properties.Resources.walk
             };
 
 
-            var pictureLibrary = new PictureLibrary(tiles, bodies, Image.FromFile(""));
+            var pictureLibrary = new PictureLibrary(tiles, bodies, new Bitmap(32, 32));
 
-            //Application.Run(new MainForm(, new Drawer(pictureLibrary)));
+            var map = new GameMap(MapParser.ParseFromFile("map.txt"), new Player(new Point(20, 20)), new Body[0]);
+
+            Application.Run(new MainForm(map, new Drawer(pictureLibrary, 32)));
         }
     }
 }

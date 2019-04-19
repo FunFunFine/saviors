@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Body.cs" />
     <Compile Include="GameMap.cs" />
     <Compile Include="MapParser.cs" />
     <Compile Include="Vector.cs" />
