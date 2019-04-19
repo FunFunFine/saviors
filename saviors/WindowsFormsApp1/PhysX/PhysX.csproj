@@ -45,10 +45,9 @@
     <Compile Include="GameMap.cs" />
     <Compile Include="MapParser.cs" />
     <Compile Include="Vector.cs" />
-    <Compile Include="IBody.cs" />
     <Compile Include="IGameMap.cs" />
-    <Compile Include="IMovingBody.cs" />
-    <Compile Include="IPlayer.cs" />
+    <Compile Include="MovingBody.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="PointExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SizeExtensions.cs" />

@@ -1,14 +1,18 @@
-namespace PhysX
+﻿namespace PhysX
 {
     class GameMap : IGameMap
     {
+
+        /// <inheritdoc />
         public Tile[,] Tiles { get; }
 
-        public IPlayer Player { get; }
+        /// <inheritdoc />
+        public Player Player { get; }
 
-        public IBody[] Bodies { get; }
+        /// <inheritdoc />
+        public Body[] Bodies { get; }
 
-        public GameMap(Tile[,] tiles, IPlayer player, IBody[] bodies)
+        public GameMap(Tile[,] tiles, Player player, Body[] bodies)
         {
             Tiles = tiles;
             Player = player;
