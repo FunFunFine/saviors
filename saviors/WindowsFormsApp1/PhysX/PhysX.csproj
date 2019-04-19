@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{32FC6B26-1329-416D-9832-37D89C86392A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PhysX</RootNamespace>
     <AssemblyName>PhysX</AssemblyName>
@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Body.cs" />
     <Compile Include="GameMap.cs" />
+    <Compile Include="MapParser.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="IGameMap.cs" />
     <Compile Include="MovingBody.cs" />
@@ -53,6 +53,11 @@
     <Compile Include="SizeExtensions.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="VectorExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="map.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

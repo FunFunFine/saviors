@@ -4,6 +4,9 @@
     {
         Ground,
         Wall,
-
+        Pavement,
+        Road,
+        Door,
+        Grass,
     }
 }
