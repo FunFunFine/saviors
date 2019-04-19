@@ -27,9 +27,10 @@ namespace Drawing
 
             foreach (var body in map.Bodies.With(map.Player))
             {
-                Console.WriteLine($"{body.Position}, {body.Size}");
+                Console.WriteLine($"{body.Position} {body.CurrentDirection.ToAngle()}");
                 var image = pictureLibrary.GetBodyImage(body).Rotate(body.CurrentDirection.ToAngle());
                 graphics.DrawImage(image, new Rectangle(body.Position, new Size(ImageSize, ImageSize)));
+                graphics.DrawImage(image.Rotate(Math.PI / 2), new Rectangle(body.Position + new Size(20, 20), new Size(ImageSize, ImageSize)));
             }
         }
     }
