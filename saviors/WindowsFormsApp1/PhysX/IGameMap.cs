@@ -7,7 +7,5 @@
         IPlayer Player { get; }
 
         IBody[] Bodies { get;}
-
-
     }
 }
