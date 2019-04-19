@@ -16,11 +16,12 @@ namespace PhysX
         }
         public virtual Body Destroy() => new Trash(Position, Size,CurrentDirection);
 
-        public  Vector CurrentDirection { get; }
+        public  Vector CurrentDirection { get; private set; }
 
         public  Body Turn(double radians)
         {
-            return new Body(Position,new Size(10,10),CurrentDirection.Rotate(radians));
+            CurrentDirection = CurrentDirection.Rotate(radians);
+            return this;
         }
 
         public  Point Position { get; private protected set; }

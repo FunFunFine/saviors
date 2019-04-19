@@ -6,7 +6,7 @@ namespace PhysX
 
     public class MovingBody : Body
     {
-        public int Tension = 1 / 2;
+        public int Tension = 1;
 
         public  Vector Velocity { get; private set; }
 
@@ -16,7 +16,7 @@ namespace PhysX
         {
             var velocity = CurrentDirection;
             SpeedUp(velocity.Normalize);
-            return default;
+            return this;
         }
 
         public void Update(int dt)
