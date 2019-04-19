@@ -4,8 +4,10 @@
     {
         Tile[,] Tiles { get; }
 
-        IPlayer Player { get; }
+        Player Player { get; }
 
-        IBody[] Bodies { get;}
+        Body[] Bodies { get;}
+
+
     }
 }
