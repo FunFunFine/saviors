@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Drawing;
+using PhysX;
 
 namespace WindowsFormsApp1
 {
@@ -16,7 +19,22 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var tiles = new Dictionary<Tile, Image>
+            {
+                [Tile.Ground] = Image.FromFile(""),
+                [Tile.Wall] = Image.FromFile("")
+            };
+
+            var bodies = new Dictionary<Type, Image>
+            {
+
+            };
+
+
+            var pictureLibrary = new PictureLibrary(tiles, bodies, Image.FromFile(""));
+
+            //Application.Run(new MainForm(, new Drawer(pictureLibrary)));
         }
     }
 }
