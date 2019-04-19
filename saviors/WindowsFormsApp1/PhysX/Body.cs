@@ -12,7 +12,7 @@ namespace PhysX
         {
             Position = position;
             Size = size;
-            CurrentDirection = direction ?? new Vector(0,-1);
+            CurrentDirection = (direction ?? new Vector(0,-1)).Normalize;
         }
         public virtual Body Destroy() => new Trash(Position, Size,CurrentDirection);
 
@@ -23,7 +23,7 @@ namespace PhysX
             return new Body(Position,new Size(10,10),CurrentDirection.Rotate(radians));
         }
 
-        public  Point Position { get; private set; }
+        public  Point Position { get; private protected set; }
     }
 
     public class Trash : Body

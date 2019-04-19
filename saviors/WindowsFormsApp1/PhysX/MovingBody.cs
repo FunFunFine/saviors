@@ -6,15 +6,24 @@ namespace PhysX
 
     public class MovingBody : Body
     {
+        public int Tension = 1 / 2;
+
         public  Vector Velocity { get; private set; }
 
         public  Vector Acceleration { get; private set; }
 
         public  MovingBody Move()
         {
+            var velocity = CurrentDirection;
+            SpeedUp(velocity.Normalize);
             return default;
         }
 
+        public void Update(int dt)
+        {
+            Velocity += (Acceleration*Tension) * dt;
+            Position = (Position.ToVector() + Velocity * dt).ToPoint();
+        }
         public  Vector SpeedUp(Vector acceleration)
         {
             Acceleration += acceleration;

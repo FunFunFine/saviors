@@ -13,7 +13,7 @@ namespace PhysX
             Y = y;
             X = x;
         }
-
+        public Vector Normalize => new Vector(X/Length, Y/Length);
         public Vector Rotate(double angle) =>
             new Vector(Cos(angle * X) - Sin(angle * Y), Sin(angle * X) + Cos(angle * Y));
 
