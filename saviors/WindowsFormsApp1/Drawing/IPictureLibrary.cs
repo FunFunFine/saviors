@@ -8,6 +8,6 @@ namespace Drawing
         Image GetTileImage(Tile tile);
 
         Image GetBodyImage<T>(T body)
-            where T : IBody;
+            where T : Body;
     }
 }
