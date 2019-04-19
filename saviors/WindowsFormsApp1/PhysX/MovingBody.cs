@@ -12,7 +12,7 @@ namespace PhysX
 
         public  MovingBody Move()
         {
-            var velocity = 
+            return default;
         }
 
         public  Vector SpeedUp(Vector acceleration)
@@ -21,13 +21,12 @@ namespace PhysX
             return Acceleration;
         }
 
-        public MovingBody(Point position, Vector acceleration,  Vector? direction = null) : base(position, direction)
+        public MovingBody(Point position, Size size, Vector acceleration,  Vector? direction = null) : base(position,size, direction)
         {
             Acceleration = acceleration;
-            Velocity = velocity;
         }
 
-        public MovingBody(Point position, Vector? direction = null) : base(position, direction)
+        public MovingBody(Point position,Size size, Vector? direction = null) : base(position, size,direction)
         {
             Acceleration = Vector.Zero;
             Velocity = Vector.Zero;

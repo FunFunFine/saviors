@@ -6,18 +6,21 @@ namespace PhysX
 
     public class Body 
     {
-        public Body(Point position, Vector? direction = null)
+        public virtual Size Size { get; private set; }
+
+        public Body(Point position, Size size, Vector? direction = null)
         {
             Position = position;
+            Size = size;
             CurrentDirection = direction ?? new Vector(0,-1);
         }
-        public virtual Body Destroy() => new Trash(Position, CurrentDirection);
+        public virtual Body Destroy() => new Trash(Position, Size,CurrentDirection);
 
         public  Vector CurrentDirection { get; }
 
         public  Body Turn(double radians)
         {
-            return new Body(Position,CurrentDirection.Rotate(radians));
+            return new Body(Position,new Size(10,10),CurrentDirection.Rotate(radians));
         }
 
         public  Point Position { get; private set; }
@@ -25,7 +28,7 @@ namespace PhysX
 
     public class Trash : Body
     {
-        public Trash(Point position, Vector? direction = null) : base(position, direction)
+        public Trash(Point position, Size size,Vector? direction = null) : base(position,size,  direction)
         {
         }
 
