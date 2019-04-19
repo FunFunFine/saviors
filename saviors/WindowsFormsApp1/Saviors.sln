@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saviors", "WindowsFormsApp1\Saviors.csproj", "{EDA21726-4ACC-46B6-AF53-395B4EEBCF71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysX", "PhysX\PhysX.csproj", "{32FC6B26-1329-416D-9832-37D89C86392A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EDA21726-4ACC-46B6-AF53-395B4EEBCF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDA21726-4ACC-46B6-AF53-395B4EEBCF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDA21726-4ACC-46B6-AF53-395B4EEBCF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FC6B26-1329-416D-9832-37D89C86392A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FC6B26-1329-416D-9832-37D89C86392A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FC6B26-1329-416D-9832-37D89C86392A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FC6B26-1329-416D-9832-37D89C86392A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
