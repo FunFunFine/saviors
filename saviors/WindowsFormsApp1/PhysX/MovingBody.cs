@@ -14,6 +14,7 @@ namespace PhysX
     public class MovingBody : Body
     {
         public const int SpeedUp = 5;
+        private readonly Tile[,] tiles;
 
         public int Tension = 1;
 
@@ -38,7 +39,13 @@ namespace PhysX
 
         public void Update()
         {
-            Position = (Position.ToVector() + Velocity).ToPoint();
+            var newPosition = (Position.ToVector() + Velocity).ToPoint();
+            //tiles[newPosition.X / 64, newPosition.Y / 64] = Tile.Bottles;
+            if (tiles[newPosition.X / 64, newPosition.Y / 64] == Tile.Wall)
+            {
+                return;
+            }
+            Position = newPosition;
         }
         
 
@@ -48,10 +55,11 @@ namespace PhysX
             Acceleration = acceleration;
         }
 
-        public MovingBody(Point position, Size size, Vector? direction = null) : base(position, size, direction)
+        public MovingBody(Point position, Size size, Tile[,] tiles, Vector? direction = null) : base(position, size, direction)
         {
             Acceleration = Vector.Zero;
             Velocity = Vector.Zero;
+            this.tiles = tiles;
         }
     }
 }

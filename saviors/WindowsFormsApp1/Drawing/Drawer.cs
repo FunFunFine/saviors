@@ -62,9 +62,8 @@ namespace Drawing
         public void Draw(Graphics graphics, IGameMap map)
         {
             var size = graphics.ClipBounds.Size;
-            start = new Point((int) size.Width / 2, (int) size.Height / 2) - (Size) map.Player.Position
-                + new Size(shaking[currentShaking].X * 1, shaking[currentShaking].Y * 1);
-            currentShaking = (currentShaking + 1) % shaking.Length;
+            start = new Point((int) size.Width / 2, (int) size.Height / 2) - (Size) map.Player.Position;
+            //currentShaking = (currentShaking + 1) % shaking.Length;
 
             foreach (var (tile, x, y) in map.Tiles.IterateDoubleArray())
             {
@@ -74,7 +73,7 @@ namespace Drawing
 
             var image = pictureLibrary.GetBodyImage(map.Player).Rotate(-map.Player.CurrentDirection.ToAngle());
             graphics.DrawImage(image,
-                new Rectangle(start + (Size) map.Player.Position - new Size(ImageSize, ImageSize), 
+                new Rectangle(start + (Size) map.Player.Position + new Size(-ImageSize * 8, +ImageSize * 5), 
                     new Size(ImageSize * 2, ImageSize * 2)));
 
             foreach (var body in map.Bodies)
