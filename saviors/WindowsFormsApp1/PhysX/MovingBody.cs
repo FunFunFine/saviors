@@ -15,6 +15,7 @@ namespace PhysX
     {
         public const int SpeedUp = 5;
         private readonly Tile[,] tiles;
+        public bool isLying = true;
 
         public Vector Velocity { get; set; }
 
@@ -47,6 +48,8 @@ namespace PhysX
             {
                 return false;
             }
+            if (tiles[x, y] == Tile.Win)
+                throw new WinException();
             Position = newPosition;
             return true;
         }

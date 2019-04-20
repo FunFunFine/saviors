@@ -54,6 +54,7 @@
     <Compile Include="SizeExtensions.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="VectorExtensions.cs" />
+    <Compile Include="WinException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="map.txt">

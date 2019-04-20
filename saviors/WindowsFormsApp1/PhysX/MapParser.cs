@@ -16,6 +16,8 @@ namespace PhysX
         public const char PivoSign = 'P';
         public const char Bottles = 'B';
 
+        public const char Win = 'W';
+
 
 
 
@@ -59,7 +61,9 @@ namespace PhysX
                         case Bottles:
                             tiles[i, j] = Tile.Bottles;
                             break;
-
+                        case Win:
+                            tiles[i, j] = Tile.Win;
+                            break;
 
                     }
 

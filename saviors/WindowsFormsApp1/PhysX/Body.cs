@@ -12,7 +12,7 @@ namespace PhysX
         {
             Position = position;
             Size = size;
-            CurrentDirection = (direction ?? new Vector(1,1)).Normalize;
+            CurrentDirection = (direction ?? new Vector(1,0)).Normalize;
         }
         public virtual Body Destroy() => new Trash(Position, Size,CurrentDirection);
 

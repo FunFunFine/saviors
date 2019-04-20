@@ -11,10 +11,11 @@ namespace PhysX
         public override bool Update()
         {
             var result = base.Update();
-            if (!result && Velocity.Length > 5)
+            if (!result && Velocity.Length > 9)
             {
                 Health -= 1 * Velocity.Length;
                 Velocity = Vector.Zero;
+                isLying = true;
             }
             return result;
         }

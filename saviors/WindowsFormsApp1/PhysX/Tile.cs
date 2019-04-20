@@ -11,5 +11,6 @@
         BeerSign,
         ShopSign,
         Bottles,
+        Win
     }
 }

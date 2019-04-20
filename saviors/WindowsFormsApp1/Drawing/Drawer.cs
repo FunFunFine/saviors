@@ -71,9 +71,11 @@ namespace Drawing
                     new Rectangle(start.Y + y * ImageSize, start.X + x * ImageSize, ImageSize, ImageSize));
             }
 
-            var image = pictureLibrary.GetBodyImage(map.Player).Rotate(-map.Player.CurrentDirection.ToAngle());
+            var image = pictureLibrary.GetBodyImage(map.Player);
+            if (!map.Player.isLying)
+                image = image.Rotate(-map.Player.CurrentDirection.ToAngle());
             graphics.DrawImage(image,
-                new Rectangle(start + (Size) map.Player.Position + new Size(-ImageSize * 8, +ImageSize * 5), 
+                new Rectangle(start + (Size) map.Player.Position + new Size((int)(-ImageSize * 8.5), (int)(ImageSize * 5.5)), 
                     new Size(ImageSize * 2, ImageSize * 2)));
 
             foreach (var body in map.Bodies)
