@@ -1,84 +1,57 @@
-﻿using System.Drawing;
-using static  System.Math;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using static System.Math;
 namespace PhysX
 {
-
-    public static class Constants
+    public enum State
     {
-        public static int TileSize = 10;
-        public static int Gravity = 5;
-        public static int JumpSpeed = 40;
-        public static int HorizontalSpeed = 4;
-
-        public static int HorizontalAcceleration = 2;
-        public static Size InflateSize = new Size(2, 2);
-        public static readonly int DarknessSpeed = 3;
+        MovingDown, Standing, MovingRight, MovingLeft, AtFloor, MovingUp, Moving
     }
 
+    
     public class MovingBody : Body
     {
+        public const int SpeedUp = 5;
+
         public int Tension = 1;
 
-        public  Vector Velocity { get; private set; }
+        public Vector Velocity { get; private set; }
 
-        public  Vector Acceleration { get; private set; }
+        public Vector Acceleration { get; private set; }
 
-        public  MovingBody Move()
+        /// <inheritdoc />
+        public override Body Turn(double radians)
         {
-            Move(CurrentDirection.Normalize);
-            return this;
+            base.Turn(radians);
+            Velocity = Velocity.Rotate(radians);
+            return this ;
         }
 
-
-        private Vector Update(int dt)
+        public void Move()
         {
-            var oldSpeed = _speed;
-            _speed += Acceleration * dt;
-            return (oldSpeed + _speed) / 2 * dt;
-
-        }
-        public void UpdateT(int dt)
-        {
-            Velocity += (Acceleration*Tension) * dt;
-            Position = (Position.ToVector() + Velocity * dt).ToPoint();
+            var resultVelocity = Velocity.Normalize + CurrentDirection.Normalize;
+            Acceleration = -1 * resultVelocity;
+            Velocity = resultVelocity * SpeedUp;
         }
 
-        public void UpdatePosition(int dt) => Move(Update(dt));
-
-        private void Move(Vector shift)
+        public void Update()
         {
-            var xAmount = Abs(shift.X);
-            var yAmount = Abs(shift.Y);
-            var xShift = xAmount.Equals(0) ? 0 : shift.X / xAmount;
-            var yShift = yAmount.Equals(0) ? 0 : shift.Y / yAmount;
-            for (var i = 0; i < xAmount; i++)
-            {
-                    var p = Position;
-                    p.X += (int)xShift;
-                    Position = p;
-            }
+            if (Velocity==Vector.Zero)
+                Acceleration = Vector.Zero;
 
-            for (var i = 0; i < yAmount; i++)
-            {
-                    var p = Position;
-                    p.Y += (int)yShift;
-                    Position = p;
-            }
+            Position = (Position.ToVector()+Velocity).ToPoint();
         }
+        
 
-        private Vector _speed = Vector.Zero;
-        public  Vector SpeedUp(Vector acceleration)
-        {
-            Acceleration += acceleration;
-            return Acceleration;
-        }
 
-        public MovingBody(Point position, Size size, Vector acceleration,  Vector? direction = null) : base(position,size, direction)
+        public MovingBody(Point position, Size size, Vector acceleration, Vector? direction = null) : base(position, size, direction)
         {
             Acceleration = acceleration;
         }
 
-        public MovingBody(Point position,Size size, Vector? direction = null) : base(position, size,direction)
+        public MovingBody(Point position, Size size, Vector? direction = null) : base(position, size, direction)
         {
             Acceleration = Vector.Zero;
             Velocity = Vector.Zero;

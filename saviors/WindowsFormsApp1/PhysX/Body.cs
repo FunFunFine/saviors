@@ -18,7 +18,7 @@ namespace PhysX
 
         public  Vector CurrentDirection { get; private set; }
 
-        public  Body Turn(double radians)
+        public virtual Body Turn(double radians)
         {
             CurrentDirection = CurrentDirection.Rotate(radians);
             return this;

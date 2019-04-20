@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Body.cs" />
-    <Compile Include="GameMap.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="MapParser.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="IGameMap.cs" />
