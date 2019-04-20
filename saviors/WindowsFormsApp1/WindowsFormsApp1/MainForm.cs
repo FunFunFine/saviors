@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Drawing;
 using PhysX;
@@ -31,6 +33,8 @@ namespace WindowsFormsApp1
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            ImageAnimator.UpdateFrames();
+            e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
             drawer.Draw(e.Graphics, map);
         }
 
@@ -46,6 +50,16 @@ namespace WindowsFormsApp1
                     break;
                 case Keys.Up:
                     map.Player.Move();
+                    break;
+                case Keys.P:
+                    Task.Run(() => drawer.SetImage(map.Player, Properties.Resources.smoke))
+                        .ContinueWith(t => Task.Delay(1900).Wait())
+                        .ContinueWith(t => drawer.SetImage(map.Player, Properties.Resources.walk));
+                    break;
+                case Keys.D:
+                    Task.Run(() => drawer.SetImage(map.Player, Properties.Resources.drink))
+                        .ContinueWith(t => Task.Delay(1400).Wait())
+                        .ContinueWith(t => drawer.SetImage(map.Player, Properties.Resources.walk));
                     break;
             }
         }

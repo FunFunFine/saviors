@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Linq;
 using PhysX;
 
 namespace Drawing
@@ -16,6 +18,9 @@ namespace Drawing
             this.tiles = tiles;
             this.bodies = bodies;
             this.defaultImage = defaultImage;
+
+            foreach (var image in bodies.Values.Concat(tiles.Values).With(defaultImage).Where(i => Equals(i.RawFormat, ImageFormat.Gif)))
+                ImageAnimator.Animate(image, (sender, args) => { });
         }
 
         public Image GetTileImage(Tile tile)
@@ -28,6 +33,15 @@ namespace Drawing
         {
             var type = body.GetType();
             return !bodies.ContainsKey(type) ? defaultImage : bodies[type];
+        }
+
+        public void SetBodyImage<T>(T body, Image image)
+            where T : Body
+        {
+            var type = body.GetType();
+            if (Equals(image.RawFormat, ImageFormat.Gif))
+                ImageAnimator.Animate(image, (sender, args) => { });
+            bodies[type] = image;
         }
     }
 }

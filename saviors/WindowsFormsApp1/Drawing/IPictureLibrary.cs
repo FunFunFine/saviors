@@ -9,5 +9,8 @@ namespace Drawing
 
         Image GetBodyImage<T>(T body)
             where T : Body;
+
+        void SetBodyImage<T>(T body, Image image)
+            where T : Body;
     }
 }

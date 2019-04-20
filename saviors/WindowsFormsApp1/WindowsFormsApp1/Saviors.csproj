@@ -88,6 +88,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bottles.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\brick.png" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neon_beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neon_store.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\road.png" />
@@ -106,13 +115,13 @@
     <None Include="Resources\walk.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bottles.png" />
+    <None Include="Resources\smoke.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\neon_beer.png" />
+    <None Include="Resources\drink.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\neon_store.png" />
+    <None Include="Resources\bottles-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

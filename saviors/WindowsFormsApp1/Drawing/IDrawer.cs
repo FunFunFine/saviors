@@ -5,8 +5,9 @@ namespace Drawing
 {
     public interface IDrawer
     {
-        int ImageSize { get; }
-
         void Draw(Graphics graphics, IGameMap map);
+
+        void SetImage<T>(T body, Image image)
+            where T : Body;
     }
 }
