@@ -6,7 +6,17 @@ namespace PhysX
     {
         public Player(Point position, Tile[,] tiles) : base(position, new Size(10, 10), tiles) { }
 
-        byte Health { get; set; } 
-        
+        public double Health { get; set; } = 100;
+
+        public override bool Update()
+        {
+            var result = base.Update();
+            if (!result && Velocity.Length > 5)
+            {
+                Health -= 1 * Velocity.Length;
+                Velocity = Vector.Zero;
+            }
+            return result;
+        }
     }
 }

@@ -16,11 +16,9 @@ namespace PhysX
         public const int SpeedUp = 5;
         private readonly Tile[,] tiles;
 
-        public int Tension = 1;
+        public Vector Velocity { get; set; }
 
-        public Vector Velocity { get; private set; }
-
-        public Vector Acceleration { get; private set; }
+        public Vector Acceleration { get; set; }
 
         /// <inheritdoc />
         public override Body Turn(double radians)
@@ -37,22 +35,20 @@ namespace PhysX
             Velocity = resultVelocity * SpeedUp;
         }
 
-        public void Update()
+        public virtual bool Update()
         {
+            var width = tiles.GetLength(0);
+            var height = tiles.GetLength(1);
             var newPosition = (Position.ToVector() + Velocity).ToPoint();
-            //tiles[newPosition.X / 64, newPosition.Y / 64] = Tile.Bottles;
-            if (tiles[newPosition.X / 64, newPosition.Y / 64] == Tile.Wall)
+            var x = newPosition.X / 64;
+            var y = newPosition.Y / 64;
+            Console.WriteLine($"{x}, {y}, {width}, {height}");
+            if (x < 1 || y < 1 || x >= width - 1 || y >= height - 1 || tiles[x, y] == Tile.Wall)
             {
-                return;
+                return false;
             }
             Position = newPosition;
-        }
-        
-
-
-        public MovingBody(Point position, Size size, Vector acceleration, Vector? direction = null) : base(position, size, direction)
-        {
-            Acceleration = acceleration;
+            return true;
         }
 
         public MovingBody(Point position, Size size, Tile[,] tiles, Vector? direction = null) : base(position, size, direction)
