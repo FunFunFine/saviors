@@ -8,5 +8,8 @@
         Road,
         Door,
         Grass,
+        BeerSign,
+        ShopSign,
+        Bottles,
     }
 }

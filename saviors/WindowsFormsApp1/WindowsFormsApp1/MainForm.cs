@@ -17,10 +17,7 @@ namespace WindowsFormsApp1
             this.map = map;
             this.drawer = drawer;
 
-            ClientSize = new Size(map.Tiles.GetLength(0) * drawer.ImageSize, map.Tiles.GetLength(1) * drawer.ImageSize);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
 
             timer.Interval = 30;
             timer.Tick += (sender, args) =>
@@ -42,10 +39,10 @@ namespace WindowsFormsApp1
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    map.Player.Turn(-Math.PI / 4);
+                    map.Player.Turn(-Math.PI / 16);
                     break;
                 case Keys.Right:
-                    map.Player.Turn(Math.PI / 4);
+                    map.Player.Turn(Math.PI / 16);
                     break;
                 case Keys.Up:
                     map.Player.Move();

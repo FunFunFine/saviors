@@ -11,12 +11,12 @@ namespace Drawing
 
             using (var graphics = Graphics.FromImage(bmp))
             {
-                var halfWidth = (float) bmp.Width / 2;
-                var halfHeight = (float) bmp.Height / 2;
+                var halfWidth = (float)bmp.Width / 2;
+                var halfHeight = (float)bmp.Height / 2;
 
                 graphics.TranslateTransform(halfWidth, halfHeight);
 
-                graphics.RotateTransform((float) angle);
+                graphics.RotateTransform((float)angle);
 
                 graphics.TranslateTransform(-halfWidth, -halfHeight);
 

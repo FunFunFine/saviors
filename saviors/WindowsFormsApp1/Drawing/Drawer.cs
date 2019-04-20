@@ -13,7 +13,7 @@ namespace Drawing
         public Drawer(IPictureLibrary pictureLibrary, int imageSize)
         {
             this.pictureLibrary = pictureLibrary;
-            ImageSize = imageSize;
+            ImageSize = imageSize - 1;
         }
 
 
@@ -21,7 +21,7 @@ namespace Drawing
         {
             foreach (var (tile, x, y) in map.Tiles.IterateDoubleArray())
             {
-                graphics.DrawImage(pictureLibrary.GetTileImage(tile),
+                graphics.DrawImageUnscaled(pictureLibrary.GetTileImage(tile),
                     new Rectangle(y * ImageSize, x * ImageSize, ImageSize, ImageSize));
             }
 
@@ -29,8 +29,7 @@ namespace Drawing
             {
                 Console.WriteLine($"{body.Position} {body.CurrentDirection.ToAngle()}");
                 var image = pictureLibrary.GetBodyImage(body).Rotate(body.CurrentDirection.ToAngle());
-                graphics.DrawImage(image, new Rectangle(body.Position, new Size(ImageSize, ImageSize)));
-                graphics.DrawImage(image.Rotate(Math.PI / 2), new Rectangle(body.Position + new Size(20, 20), new Size(ImageSize, ImageSize)));
+                graphics.DrawImageUnscaled(image, new Rectangle(body.Position, new Size(ImageSize, ImageSize)));
             }
         }
     }

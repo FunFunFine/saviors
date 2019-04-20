@@ -63,6 +63,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bottles {
+            get {
+                object obj = ResourceManager.GetObject("bottles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brick {
             get {
                 object obj = ResourceManager.GetObject("brick", resourceCulture);
@@ -86,6 +96,26 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap grass {
             get {
                 object obj = ResourceManager.GetObject("grass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap neon_beer {
+            get {
+                object obj = ResourceManager.GetObject("neon_beer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap neon_store {
+            get {
+                object obj = ResourceManager.GetObject("neon_store", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
