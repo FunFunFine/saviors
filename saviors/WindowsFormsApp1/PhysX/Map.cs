@@ -1,6 +1,6 @@
 ﻿namespace PhysX
 {
-    public class GameMap : IGameMap
+    public class Map : IGameMap
     {
 
         /// <inheritdoc />
@@ -12,7 +12,7 @@
         /// <inheritdoc />
         public Body[] Bodies { get; }
 
-        public GameMap(Tile[,] tiles, Player player, Body[] bodies)
+        public Map(Tile[,] tiles, Player player, Body[] bodies)
         {
             Tiles = tiles;
             Player = player;

@@ -43,9 +43,15 @@ namespace WindowsFormsApp1
             {
                 case Keys.Left:
                     map.Player.Turn(-Math.PI / 4);
+                    //map.Player.MoveLeft();
+                    break;
+                case Keys.Down:
+                    //map.Player.Turn(-Math.PI / 4);
+                    //map.Player.MoveDown();
                     break;
                 case Keys.Right:
                     map.Player.Turn(Math.PI / 4);
+                    //map.Player.MoveRight();
                     break;
                 case Keys.Up:
                     map.Player.Move();
