@@ -29,7 +29,8 @@ namespace WindowsFormsApp1
                 [Tile.Grass] = Properties.Resources.grass,
                 [Tile.BeerSign] = Properties.Resources.neon_beer,
                 [Tile.ShopSign] = Properties.Resources.neon_store,
-                [Tile.Bottles] = Properties.Resources.bottles
+                [Tile.Bottles] = Properties.Resources.bottles,
+                [Tile.Door] = Properties.Resources.door
             };
 
             var bodies = new Dictionary<Type, Image>

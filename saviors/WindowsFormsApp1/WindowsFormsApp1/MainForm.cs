@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Drawing;
@@ -13,6 +14,7 @@ namespace WindowsFormsApp1
         private readonly IDrawer drawer;
         private readonly IGameMap map;
         private readonly Timer timer = new Timer();
+        //private SoundPlayer player = new SoundPlayer();
 
         public MainForm(IGameMap map, IDrawer drawer)
         {

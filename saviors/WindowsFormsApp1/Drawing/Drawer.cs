@@ -13,12 +13,22 @@ namespace Drawing
         private Point[] shaking =
         {
             new Point(4, 0),
+            new Point(4, 3), 
             new Point(3, 3),
+            new Point(3,4),
+            
             new Point(0, 4),
+            new Point(-3, 4), 
             new Point(-3, 3),
+            new Point(-4, 3), 
+
             new Point(-4, 0),
+            new Point(-4, -3), 
             new Point(-3, -3),
+            new Point(-3, -4),
+            
             new Point(0, -4),
+            new Point(3, -4), 
             new Point(3, -3), 
             //new Point(0, 2),
 
