@@ -31,7 +31,8 @@ namespace WindowsFormsApp1
                 [Tile.ShopSign] = Properties.Resources.neon_store,
                 [Tile.Bottles] = Properties.Resources.bottles,
                 [Tile.Door] = Properties.Resources.door,
-                [Tile.Win] = Properties.Resources.Win
+                [Tile.Win] = Properties.Resources.Win,
+                [Tile.Trash] = Properties.Resources.trash
             };
 
             var bodies = new Dictionary<Type, Image>

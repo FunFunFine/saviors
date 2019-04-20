@@ -17,6 +17,7 @@ namespace PhysX
         public const char Bottles = 'B';
 
         public const char Win = 'W';
+        public const char Trash = 'T';
 
 
 
@@ -64,7 +65,9 @@ namespace PhysX
                         case Win:
                             tiles[i, j] = Tile.Win;
                             break;
-
+                        case Trash:
+                            tiles[i, j] = Tile.Trash;
+                            break;
                     }
 
                 }

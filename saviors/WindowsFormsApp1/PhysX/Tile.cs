@@ -11,6 +11,7 @@
         BeerSign,
         ShopSign,
         Bottles,
-        Win
+        Win,
+        Trash
     }
 }

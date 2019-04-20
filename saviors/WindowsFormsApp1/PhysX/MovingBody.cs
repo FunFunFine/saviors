@@ -48,7 +48,7 @@ namespace PhysX
             {
                 return false;
             }
-            if (tiles[x, y] == Tile.Win)
+            if (tiles[x, y] == Tile.Win || tiles[x, y] == Tile.Trash)
                 throw new WinException();
             Position = newPosition;
             return true;
