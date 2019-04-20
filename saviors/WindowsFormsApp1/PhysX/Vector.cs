@@ -47,6 +47,7 @@ namespace PhysX
         public static Vector operator /(Vector vector, int a) => new Vector(vector.X / a, vector.Y / a);
 
         public static Vector operator +(Vector a, Vector b) => new Vector(a.X + b.X, a.Y + b.Y);
+        public static Vector operator -(Vector a, Vector b) => new Vector(a.X - b.X, a.Y - b.Y);
         public static bool operator ==(Vector a, Vector b) => a.Equals(b);
 
         public static bool operator !=(Vector a, Vector b) => !(a == b);

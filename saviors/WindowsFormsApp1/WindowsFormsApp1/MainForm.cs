@@ -43,10 +43,10 @@ namespace WindowsFormsApp1
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    map.Player.Turn(-Math.PI / 16);
+                    map.Player.Turn(Math.PI / 16);
                     break;
                 case Keys.Right:
-                    map.Player.Turn(Math.PI / 16);
+                    map.Player.Turn(-Math.PI / 16);
                     break;
                 case Keys.Up:
                     map.Player.Move();
