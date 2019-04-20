@@ -105,5 +105,14 @@
   <ItemGroup>
     <None Include="Resources\walk.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neon_beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neon_store.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,11 @@ namespace PhysX
         public const char Door = '+';
         public const char Grass = 'g';
 
+        public const char ShopSign = 'V';
+        public const char PivoSign = 'P';
+        public const char Bottles = 'B';
+
+
 
 
 
@@ -45,6 +50,16 @@ namespace PhysX
                         case Grass:
                             tiles[i, j] = Tile.Grass;
                             break;
+                        case PivoSign:
+                            tiles[i, j] = Tile.BeerSign;
+                            break;
+                        case ShopSign:
+                            tiles[i, j] = Tile.ShopSign;
+                            break;
+                        case Bottles:
+                            tiles[i, j] = Tile.Bottles;
+                            break;
+
 
                     }
 
@@ -59,6 +74,6 @@ namespace PhysX
         {
             var tiles = ParseFromFile("map.txt");
         }
-        
+
     }
 }
