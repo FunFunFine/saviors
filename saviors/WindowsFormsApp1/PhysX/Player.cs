@@ -10,6 +10,7 @@ namespace PhysX
 
         public Player(Point position) : base(position, new Size(10, 10)) { }
 
-        byte Health { get; set; }
+        byte Health { get; set; } 
+        
     }
 }
