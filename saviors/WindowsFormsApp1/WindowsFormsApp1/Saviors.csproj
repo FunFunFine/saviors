@@ -112,19 +112,19 @@
     <None Include="Resources\trotuar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\walk.gif" />
+    <None Include="Resources\bottles-1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\smoke.gif" />
+    <None Include="Resources\neon_beer %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\drink.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bottles-1.png" />
+    <None Include="Resources\smoke.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\neon_beer %282%29.png" />
+    <None Include="Resources\walk.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

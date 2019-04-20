@@ -12,32 +12,33 @@ namespace Drawing
 
         private Point[] shaking =
         {
-            new Point(1, 0),
-            new Point(2, 0),
-            new Point(3, 0),
-            new Point(2, 0),
-            new Point(1, 0),
-            new Point(0, 0),
-            new Point(-1, 0),
-            new Point(-2, 0),
-            new Point(-3, 0),
-            new Point(-2, 0),
-            new Point(-1, 0),
-            new Point(0, 0),
+            new Point(4, 0),
+            new Point(3, 3),
+            new Point(0, 4),
+            new Point(-3, 3),
+            new Point(-4, 0),
+            new Point(-3, -3),
+            new Point(0, -4),
+            new Point(3, -3), 
+            //new Point(0, 2),
 
+            //new Point(1, 3),
+            //new Point(2, 4),
 
-            new Point(0,-1),
-            new Point(0,-2),
-            new Point(0,-3),
-            new Point(0,-4),
-            new Point(0,-5),
-            new Point(0,-4),
-            new Point(0,-3),
-            new Point(0,-2),
-            new Point(0,-1),
-            new Point(0,-0)
-            , 
+            //new Point(4, 4),
 
+            //new Point(5, 3),
+            //new Point(6, 2),
+
+            //new Point(6, 0),
+
+            //new Point(5,-1),
+            //new Point(4,-2),
+
+            //new Point(2,-2),
+
+            //new Point(1,-1),
+            //new Point(0, 0),
         };
 
         public int ImageSize { get; }
@@ -52,7 +53,7 @@ namespace Drawing
         {
             var size = graphics.ClipBounds.Size;
             start = new Point((int) size.Width / 2, (int) size.Height / 2) - (Size) map.Player.Position
-                + new Size(shaking[currentShaking].X * 5, shaking[currentShaking].Y * 8);
+                + new Size(shaking[currentShaking].X * 1, shaking[currentShaking].Y * 1);
             currentShaking = (currentShaking + 1) % shaking.Length;
 
             foreach (var (tile, x, y) in map.Tiles.IterateDoubleArray())
