@@ -32,16 +32,13 @@ namespace PhysX
         public void Move()
         {
             var resultVelocity = Velocity.Normalize + CurrentDirection.Normalize;
-            Acceleration = -1 * resultVelocity;
+            Acceleration = -1 * resultVelocity * SpeedUp/3 ;
             Velocity = resultVelocity * SpeedUp;
         }
 
         public void Update()
         {
-            if (Velocity==Vector.Zero)
-                Acceleration = Vector.Zero;
-
-            Position = (Position.ToVector()+Velocity).ToPoint();
+            Position = (Position.ToVector() + Velocity).ToPoint();
         }
         
 
