@@ -52,7 +52,7 @@ namespace Drawing
         {
             var size = graphics.ClipBounds.Size;
             start = new Point((int) size.Width / 2, (int) size.Height / 2) - (Size) map.Player.Position
-                + new Size(shaking[currentShaking].X * 2, shaking[currentShaking].Y * 2);
+                + new Size(shaking[currentShaking].X * 5, shaking[currentShaking].Y * 8);
             currentShaking = (currentShaking + 1) % shaking.Length;
 
             foreach (var (tile, x, y) in map.Tiles.IterateDoubleArray())
@@ -61,9 +61,8 @@ namespace Drawing
                     new Rectangle(start.Y + y * ImageSize, start.X + x * ImageSize, ImageSize, ImageSize));
             }
 
-            var image = pictureLibrary.GetBodyImage(map.Player).Rotate(map.Player.CurrentDirection.ToAngle());
-            graphics.DrawImage(image,
-                new Rectangle(start + (Size) map.Player.Position - new Size(ImageSize, ImageSize), 
+            graphics.DrawImage(pictureLibrary.GetBodyImage(map.Player).Rotate(map.Player.CurrentDirection.ToAngle()),
+            new Rectangle(start + (Size) map.Player.Position - new Size(ImageSize, ImageSize), 
                     new Size(ImageSize * 2, ImageSize * 2)));
 
             foreach (var body in map.Bodies)

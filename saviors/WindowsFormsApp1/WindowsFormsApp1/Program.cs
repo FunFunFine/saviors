@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
 
             var pictureLibrary = new PictureLibrary(tiles, bodies, new Bitmap(32, 32));
 
-            var map = new GameMap(MapParser.ParseFromFile("map.txt"), new Player(new Point(1000, 1000)), new Body[0]);
+            var map = new Map(MapParser.ParseFromFile("map.txt"), new Player(new Point(1000, 1000)), new Body[0]);
 
             Application.Run(new MainForm(map, new Drawer(pictureLibrary, 64)));
         }
