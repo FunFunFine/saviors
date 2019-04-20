@@ -27,7 +27,6 @@ namespace Drawing
 
             foreach (var body in map.Bodies.With(map.Player))
             {
-                Console.WriteLine($"{body.Position} {body.CurrentDirection.ToAngle()}");
                 var image = pictureLibrary.GetBodyImage(body).Rotate(body.CurrentDirection.ToAngle());
                 graphics.DrawImageUnscaled(image, new Rectangle(body.Position, new Size(ImageSize, ImageSize)));
             }

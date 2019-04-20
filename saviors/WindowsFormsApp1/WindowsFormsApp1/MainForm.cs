@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             timer.Tick += (sender, args) =>
             {
                 Invalidate();
-                map.Player.UpdatePosition(1);
+                map.Player.Update();
             };
             timer.Start();
             DoubleBuffered = true;
